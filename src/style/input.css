@@ -1,0 +1,35 @@
+.label_texto {
+	padding: 0px 4px;
+}
+.input_text {
+	transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+}
+
+.input_text:focus ~ .label_texto {
+	top: -1rem;
+	font-size: 0.8rem;
+	left: 0.8rem;
+	background: #ffffff;
+	display: block;
+}
+
+/* input:-internal-autofill-selected {
+	appearance: menulist-button;
+	background-color: red !important;
+	background-image: none !important;
+	color: -internal-light-dark(white) !important;
+} */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-text-fill-color: #10b981;
+	/* -webkit-box-shadow: 0 0 0px 1000px #000 inset; */
+	transition: background-color 5000s ease-in-out 0s;
+}
