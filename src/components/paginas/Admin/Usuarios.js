@@ -72,9 +72,7 @@ const Usuarios = () => {
 							return (
 								e.roles[0].name === "user" && (
 									<ItemUsuario
-										onBtn={() => {
-											obtenerUsuarioActual(e._id);
-										}}
+										onBtn={obtenerUsuarioActual}
 										key={e._id}
 										estilos={
 											"hover:bg-primario-green hover:text-primario-green-pure"
@@ -96,9 +94,7 @@ const Usuarios = () => {
 							return (
 								e.roles[0].name !== "user" && (
 									<ItemUsuario
-										onBtn={() => {
-											obtenerUsuarioActual(e._id);
-										}}
+										onBtn={obtenerUsuarioActual}
 										key={e._id}
 										estilos={
 											"hover:bg-primario-green hover:text-primario-green-pure"
@@ -114,12 +110,12 @@ const Usuarios = () => {
 					</div>
 				)}
 			</div>
-			<Link
+			{/* <Link
 				to={"/admin/nuevo-usuario"}
 				className="fixed p-2 rounded-md text-lg font-bold bg-primario-blue text-white bottom-10 right-10 hover:bg-blue-800"
 			>
 				Nuevo Usuario
-			</Link>
+			</Link> */}
 		</div>
 	);
 };

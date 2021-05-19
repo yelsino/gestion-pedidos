@@ -133,7 +133,6 @@ const Pedidos = () => {
 								return (
 									<ItemPedido
 										seleccionarPedido={seleccionarPedido}
-										
 										estilos={
 											"text-green-500 hover:bg-primario-green hover:text-primario-green-pure"
 										}
@@ -209,12 +208,12 @@ const Pedidos = () => {
 					</div>
 				)}
 			</div>
-			<Link
+			{/* <Link
 				to={"/admin/nuevo-pedido"}
 				className="fixed p-2 rounded-md text-lg font-bold bg-primario-blue text-white bottom-10 right-10 hover:bg-blue-800"
 			>
 				Nuevo Pedido
-			</Link>
+			</Link> */}
 		</div>
 	);
 };

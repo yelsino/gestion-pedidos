@@ -4,12 +4,15 @@ import "moment/locale/es";
 const ItemUsuario = (props) => {
 	const { id, estilos, texto1, texto2, onBtn } = props;
 
-
 	return (
-		<Link to={`/admin/usuarios/${id}`}>
+		<Link
+			onClick={() => {
+				onBtn(id);
+			}}
+			to={`/admin/usuarios/${id}`}
+		>
 			{" "}
 			<div
-				onClick={onBtn}
 				className={` bg-primario-gray 
      py-6 shadow-md flex justify-between px-20 rounded-md  text-lg font-medium  mb-4 cursor-pointer relative items-center  ${
 				estilos && estilos

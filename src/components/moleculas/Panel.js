@@ -1,11 +1,10 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import Logo from "./Logo";
 
 const Panel = (props) => {
 	const [value, setValue] = useState("productos");
-
 
 	const history = useHistory();
 	const onHandleChange = (e) => {
@@ -55,7 +54,7 @@ const Panel = (props) => {
 						className="hidden"
 					/>
 				</label>
-				<label
+				{/* <label
 					onClick={() => {
 						history.push("/admin/reclamos");
 					}}
@@ -71,9 +70,9 @@ const Panel = (props) => {
 						onChange={onHandleChange}
 						className="hidden"
 					/>
-				</label>
+				</label> */}
 
-				<label
+				{/* <label
 					onClick={() => {
 						history.push("/admin/usuarios");
 				
@@ -90,7 +89,7 @@ const Panel = (props) => {
 						onChange={onHandleChange}
 						className="hidden"
 					/>
-				</label>
+				</label> */}
 			</div>
 		</div>
 	);

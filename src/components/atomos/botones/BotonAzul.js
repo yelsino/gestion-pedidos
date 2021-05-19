@@ -1,7 +1,10 @@
 const BotonAzul = (props) => {
 	return (
 		<button
-			className="bg-blue-200 p-2 px-6 text-blue-600 rounded-md font-bold hover:bg-blue-600 hover:text-blue-200"
+			type={props.type}
+			className={`bg-primario-blue-claro p-4 px-8 text-primario-blue rounded-md font-bold  outline-none hover:bg-primario-blue hover:text-white z-10 ${
+				props.style ? props.style : ""
+			}`}
 			onClick={props.onBtn}
 		>
 			{props.texto}

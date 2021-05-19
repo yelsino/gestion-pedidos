@@ -5,9 +5,12 @@ import "moment/locale/es";
 const ItemReclamo = (props) => {
 	const { id, estilos, texto1, texto2, fecha, onBtn, reclamoActual } = props;
 	return (
-		<Link to={`/admin/reclamos/${id}`} onClick={()=>{
-reclamoActual(id)
-		}}>
+		<Link
+			to={`/admin/reclamos/${id}`}
+			onClick={() => {
+				reclamoActual(id);
+			}}
+		>
 			{" "}
 			<div
 				onClick={onBtn}

@@ -2,8 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../../context/autenticacion/authContext";
 import AlertaContext from "../../../context/alertas/alertaContext";
 import InputRdVerde from "../../atomos/inputs/InputRdVerde";
-import Logo from "../../moleculas/Logo";
 import { Link } from "react-router-dom";
+import SubTitulo from "../../atomos/textos/TxtSubTitle";
+import BotonAzul from "../../atomos/botones/BotonAzul";
+import img2 from "../../../static/img2.svg";
 
 const NuevaCuenta = (props) => {
 	// d extraer  valores del contexto
@@ -72,76 +74,96 @@ const NuevaCuenta = (props) => {
 	};
 
 	return (
-		<form
-			onSubmit={onSubmit}
-			className="flex flex-col items-center justify-center h-screen"
-		>
-			<Logo />
-			{alerta ? <p className="text-red-500 mt-3 mb-1">{alerta.msg}</p> : null}
-			{mensaje ? <p className="text-red-500 mt-3 mb-1">{mensaje}</p> : null}
-			<InputRdVerde
-				handleChange={onChangeLogin}
-				atributos={{
-					id: "username",
-					name: "username",
-					value: username,
-					type: "text",
-					placeholder: "nombre de usuario",
-					titulo: "nombre de usuario",
-				}}
-				activo={""}
+		<div className="flex justify-center items-center  w-full lg:w-1/2 flex-col  h-screen ">
+			<SubTitulo
+				texto={"Registrarse"}
+				style={"text-primario-green-pure text-4xl"}
 			/>
-
-			<InputRdVerde
-				handleChange={onChangeLogin}
-				atributos={{
-					id: "email",
-					name: "email",
-					value: email,
-					type: "email",
-					placeholder: "correo electronico",
-					titulo: "correo electronico",
-				}}
-				activo={""}
-			/>
-
-			<InputRdVerde
-				handleChange={onChangeLogin}
-				atributos={{
-					id: "password",
-					name: "password",
-					value: password,
-					type: "password",
-					placeholder: "contraseña",
-					titulo: "contraseña",
-				}}
-				activo={""}
-			/>
-
-			<InputRdVerde
-				handleChange={onChangeLogin}
-				atributos={{
-					id: "confirmar",
-					name: "confirmar",
-					value: confirmar,
-					type: "password",
-					placeholder: "confirmar contraseña ",
-					titulo: "confirmar contraseña",
-				}}
-				activo={""}
-			/>
-
-			<Link to={"/"} className="text-blue-500">
-				tengo una cuenta
-			</Link>
-
-			<button
-				type="submit"
-				className="bg-blue-100 p-2 px-6 text-blue-700 rounded-md font-bold hover:bg-blue-600 hover:text-white my-2"
+			<form
+				onSubmit={onSubmit}
+				className="flex flex-col items-center justify-center h-screen  w-full"
 			>
-				Registrarse
-			</button>
-		</form>
+				{alerta ? <p className="text-red-500 mt-3 mb-1">{alerta.msg}</p> : null}
+				{mensaje ? <p className="text-red-500 mt-3 mb-1">{mensaje}</p> : null}
+				<div className="mb-5">
+					<p className=" text-gray-500">Nombres</p>
+					<InputRdVerde
+						handleChange={onChangeLogin}
+						atributos={{
+							id: "username",
+							name: "username",
+							value: username,
+							type: "text",
+							placeholder: "nombre de usuario",
+							min: 4,
+							max: 40,
+						}}
+						style={"w-96 border-l-8  border-t-0 border-b-2 border-r-0"}
+					/>
+				</div>
+
+				<div className="mb-5">
+					<p className=" text-gray-500">Correo electronico</p>
+					<InputRdVerde
+						handleChange={onChangeLogin}
+						atributos={{
+							id: "email",
+							name: "email",
+							value: email,
+							type: "email",
+							placeholder: "correo electronico",
+							min: 4,
+							max: 40,
+						}}
+						style={"w-96 border-l-8  border-t-0 border-b-2 border-r-0"}
+					/>
+				</div>
+
+				<div className="mb-5">
+					<p className=" text-gray-500">Contraseña</p>
+					<InputRdVerde
+						handleChange={onChangeLogin}
+						atributos={{
+							id: "password",
+							name: "password",
+							value: password,
+							type: "password",
+							placeholder: "contraseña",
+							max: 30,
+						}}
+						style={"w-96 border-l-8  border-t-0 border-b-2 border-r-0"}
+					/>
+				</div>
+
+				<div className="mb-5">
+					<p className=" text-gray-500">Confirmar contraseña</p>
+					<InputRdVerde
+						handleChange={onChangeLogin}
+						atributos={{
+							id: "confirmar",
+							name: "confirmar",
+							value: confirmar,
+							type: "password",
+							placeholder: "confirmar contraseña ",
+							max: 30,
+						}}
+						style={"w-96 border-l-8  border-t-0 border-b-2 border-r-0"}
+					/>
+				</div>
+
+				<BotonAzul
+					texto={"Registrarse"}
+					type={"submit"}
+					style={"w-96 border-2 border-primario-blue"}
+				/>
+				<Link to={"/"} className="text-primario-blue my-2">
+					tengo una cuenta
+				</Link>
+			</form>
+			<div className=" absolute bottom-20 hidden lg:flex  right-0 z-0  w-1/2">
+				<img src={img2} className="" />
+			</div>
+		</div>
 	);
 };
 

@@ -81,41 +81,45 @@ const Usuario = () => {
 				stilo={""}
 			/>
 			{nuevos > 0 && (
-				<div className="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3  gap-5">
+				<div>
 					<SubTitulo texto={"Pedidos"} />
-					{pedidosUser.map((e) => {
-						return (
-							<ItemPedido
-								seleccionarPedido={seleccionarPedido}
-								estilos={
-									"text-green-500 hover:bg-primario-green hover:text-primario-green-pure"
-								}
-								key={e._id}
-								pedido={e}
-							/>
-						);
-					})}
+					<div className="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3  gap-5  ">
+						{pedidosUser.map((e) => {
+							return (
+								<ItemPedido
+									seleccionarPedido={seleccionarPedido}
+									estilos={
+										"text-green-500 hover:bg-primario-green hover:text-primario-green-pure"
+									}
+									key={e._id}
+									pedido={e}
+								/>
+							);
+						})}
+					</div>
 				</div>
 			)}
 
 			{atendidos > 0 && (
-				<div className="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3  gap-5">
+				<div>
 					<SubTitulo texto={"Reclamos"} />
-					{reclamosUser.map((e) => {
-						return (
-							<ItemReclamo
-								reclamoActual={obtenerReclamoActual}
-								key={e._id}
-								estilos={
-									"hover:bg-primario-grpeen hover:text-primario-green-pure"
-								}
-								texto1={e.asunto}
-								texto2={e.creador.username}
-								id={e._id}
-								fecha={e.createdAt}
-							/>
-						);
-					})}
+					<div className="grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3  gap-5">
+						{reclamosUser.map((e) => {
+							return (
+								<ItemReclamo
+									reclamoActual={obtenerReclamoActual}
+									key={e._id}
+									estilos={
+										"hover:bg-primario-grpeen hover:text-primario-green-pure"
+									}
+									texto1={e.asunto}
+									texto2={e.creador.username}
+									id={e._id}
+									fecha={e.createdAt}
+								/>
+							);
+						})}
+					</div>
 				</div>
 			)}
 		</div>

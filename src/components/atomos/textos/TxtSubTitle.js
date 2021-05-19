@@ -1,12 +1,12 @@
 const SubTitulo = (props) => {
 	return (
-		<p
-			className={` text-2xl font-medium mb-4 ${
-				props.stylos ? props.stylos : "text-gray-600"
+		<h3
+			className={`text-gray-900 text-xl font-bold mt-5 ${
+				props.style ? props.style : ""
 			}`}
 		>
 			{props.texto}
-		</p>
+		</h3>
 	);
 };
 

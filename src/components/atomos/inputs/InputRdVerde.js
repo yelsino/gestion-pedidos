@@ -1,16 +1,16 @@
-import "../../../style/input.css";
-
-const InputRdVerde = ({ atributos, handleChange }) => {
+const InputRdVerde = ({ atributos, handleChange, style }) => {
 	const onFocus = (event) => {
 		if (event.target.autocomplete) {
 			event.target.autocomplete = "whatever";
 		}
 	};
 	return (
-		<div className="relative my-4">
+		<div className="relative my-2">
 			<input
 				onChange={handleChange}
-				className=" border border-green-500 text-green-500 rounded-lg  font-semibold outline-none py-4 px-6 text-lg input_text fill-current"
+				className={`  border-primario-green text-green-500 rounded-lg  font-semibold outline-none py-3 px-6 text-lg input_text fill-current appearance-none ${
+					style ? style : "border-4"
+				}`}
 				id={atributos.id}
 				value={atributos.value}
 				name={atributos.name}
@@ -18,6 +18,9 @@ const InputRdVerde = ({ atributos, handleChange }) => {
 				autoComplete="off"
 				onFocus={onFocus}
 				placeholder={atributos.placeholder}
+				minLength={atributos.min}
+				maxLength={atributos.max}
+				readOnly={atributos.readOnly}
 			/>
 
 			<label
